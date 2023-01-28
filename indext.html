@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* Universal Selector: applied to all elements */
+        * {
+            background: lightskyblue;
+        }
+
+        /* type selector : for selecting specific element */
+        div {
+            background: red;
+        }
+
+        /* class selector*/
+        .apply-blue {
+            background: blue;
+        }
+
+        /* id selector: can't have more than one id*/
+        #main-span {
+            color: blue;
+        }
+
+        /* combining selector : no space - same level, space[child selector] - one element inside another */
+        div.apply-green.green-text {
+            background: rgb(123, 150, 123);
+            color: green;
+        }
+
+        span,
+        li.red {
+            background-color: red;
+        }
+
+        ul li {
+            color: aqua;
+        }
+
+        div .red {
+            background: red;
+        }
+
+        /* direct child selector : style only applied to child if it is directly parent of it*/
+        div>b {
+            background: rgb(57, 228, 0);
+        }
+
+        /* sibling selector : for selecting sibling */
+        /* apply pink color to all li after li which has class .apply-blue */
+        li.apply-blue~li {
+            background: pink;
+        }
+
+        /* apply style to very next sibling not all sibling */
+        li.red+li {
+            background: gray;
+        }
+
+        /* PSUEDO CLASSES selector : Based on how user interacts with page or where the element is placed [first or last child]*/
+        span:hover {
+            background: darkgoldenrod;
+        }
+
+        input:focus {
+            background: brown;
+        }
+
+        input:required {
+            background: purple;
+        }
+
+        input.checkbox:checked {
+            margin: 50px;
+        }
+
+        /* first child of parent.. here ul is parent and li is first child */
+        li:first-child {
+            font-size: 50px;
+        }
+
+        li:last-child:hover {
+            font-size: 20px;
+        }
+
+        /* select something in bet */
+        li:nth-child(3):hover {
+            background: black;
+        }
+
+        /* with 2n  */
+        li:nth-child(2n):hover {
+            background: black;
+        }
+
+        li:nth-child(2n-1):hover {
+            background: rgb(0, 177, 53);
+        }
+
+        /* only applied if span is the only child of parent */
+        span:only-child {
+            font-size: 50px;
+        }
+
+        /* applied to first div of entire html: first of type which is div */
+        div:first-of-type {
+            font-size: 50px;
+        }
+
+        /* only applied to span present in their containe_  */
+        span:only-of-type {
+            font-size: 5px;
+        }
+
+        /* applt to all li expect whose class is not green */
+        li:not(.apply-blue) {
+            border: 1px solid rgb(223, 239, 4);
+        }
+
+        /* start from bottom */
+        /* li:nth-last-child(2n-1):hover {
+            background: rgb(5, 6, 5);
+        } */
+
+        /* PSUEDO ELEMENTS : for selecting specific element */
+        li.red::after {
+            content: 'AFTER';
+            background: blue;
+        }
+
+        li.red::before {
+            content: 'BEFORE';
+            background: rgb(187, 187, 208);
+        }
+
+        /* ATTRIBUTE selector */
+        [data-green="true"] {
+            font-size: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <input class="checkbox" type="checkbox" name="" id="">
+    <input class="checkbox2" type="checkbox" name="" id="">
+    <input type="text">
+    <input type="text" required>
+    <div>Universal Div</div>
+    <div class="apply-green green-text">
+        <span>This is a span inside div</span>
+    </div>
+    <span id="main-span">This is a span</span>
+    <span>This is a 2nd span</span>
+    <ul>
+        <li class="red">Item 1</li>
+        <li>ITEM SIBLING TEST</li>
+        <li class="apply-blue">Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    <div>
+        <b data-green="true">DIRECT CHILD</b>
+        <span>
+            <h5 class="red">Combining Selector</h5>
+        </span>
+    </div>
+</body>
+
+</html>

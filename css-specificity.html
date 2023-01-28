@@ -1,0 +1,75 @@
+<!-- CSS specificity is the best and worst part of CSS. It allows you to do some incredible things with CSS
+especially with variables and responsive design, but when you are first starting out with CSS it is a nightmare
+trying to figure out how to properly overwrite styles.We cover exactly what effects CSS specificity and how to calculate
+the specificity of a selector through the use of multiple examples so you can quickly comprehend all the
+complexities of CSS specificity. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ONLY WORKS ON INLINE, ID, CLASS AND ELEMENT SELECTOR NOT ON COMBINING SELECTOR AND OTHER THINGS -->
+    <style>
+        /* 0:inline style,1: id,0: classes,0: element */
+        /* IT has specificity of: 0,1,0,0 */
+        #header-id {
+            color: black;
+        }
+
+        /* 0:inline style,0: id,1: classes,0: element */
+        /* IT has specificity of: 0,0,1,0 */
+        .header {
+            color: red;
+        }
+
+        /* 0:inline style,0: id,1: classes,0: element */
+        /* IT has specificity of: 0,0,1,0 : with same specificity .. we follow top to bottom [bottom overwrites top style]*/
+        .header-1 {
+            color: green;
+        }
+
+        /* 0:inline style,0: id,0: classes,1: element */
+        /* IT has specificity of: 0,0,0,1 */
+        h1 {
+            color: blue;
+        }
+
+        /* 0:inline style,0: id,0: classes,1: element */
+        /* IT has specificity of: 0,0,1,1 which is > 0,0,1,0 */
+        h1.header {
+            color: red;
+        }
+
+        /* 1,0,0,0,0 no matter what the specificity this will be applied */
+        /* NEVER USE IMPORTANT */
+        /* .header {
+            color: blueviolet !important;
+        } */
+
+        /* 0:inline style,0: id,0: classes,1: element */
+        /* IT has specificity of: 0,0,1,1 which is > 0,0,1,0 */
+        body .header-1 {
+            color: red;
+        }
+
+        .text {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1,0,0,0 -->
+    <h1 id="header-id" style="color:cyan" class="header header-1">Header</h1>
+    <p class="text">
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of using
+        Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+        as opposed to using 'Content here, content here', making it look like readable English.
+        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
+        model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+        Various versions have evolved over the years, sometimes by accident, sometimes on purpose
+        (injected humour and the like).
+    </p>
+</body>
+
+</html>

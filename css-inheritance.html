@@ -1,0 +1,62 @@
+<!-- ✧ Summary
+
+THERE ARE 3 STYLES: 
+1.CSS DEFINATION[FORMAL DEFINATION] - BASE LEVEL DEFINATION ANYONE CAN OVERRIDE THEM.
+2.BROWSER SPECIFIC STYLING - SAME LIKE ABOVE : POINT 1 AND 2 ARE APPLIED WHEN NO STYLING IS APPLIED BY US
+3.CUSTOM STYLING BY US- OVERRIDE EVERYTHING ELSE
+
+● Initial
+The actual original property value
+
+By CSS defination Initial value of div is inline but browser styling sets up its default to block
+
+● If a property is Inherit- USEFUL
+Will take the parent's property value
+
+● Unset
+Uses the parent's property value if the property is inherited else uses initial
+
+● Revert
+Revert The property to value of browser's user agent stylesheet
+
+● The all CSS property, all:unset
+The all CSS property sets the same property value to every CSS property[intial to intial , inherit to inherit]. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        button {
+            /* will work same if we remove last three properties */
+            /* all: unset; */
+            background-color: red;
+            border: none;
+            font-size: 1rem;
+            /* by default it is ARIAL therefore, use inherit so that button use font-family same as other page*/
+            font-family: inherit;
+        }
+
+        /* some property inherit by default[font-size] some dont[border] */
+        div {
+            /* background-color: green; */
+            font-size: 2rem;
+            border: 1px solid red;
+        }
+
+        /* how can we make border property to inherit from parent */
+        p {
+            border: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Button</button>
+    <div>
+        <!-- if we apply style to div p tag will inherit same styles of div by default since iiv is a parent -->
+        <p>This is a p</p>
+        This is a div
+    </div>
+</body>
+
+</html>

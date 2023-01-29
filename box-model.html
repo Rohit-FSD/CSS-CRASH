@@ -1,0 +1,51 @@
+<!-- EVERYTHING IN CSS IS A BOX
+The box model in CSS is a way of describing the layout of an HTML element. It consists of the element's 
+content, padding, borders, and margins.
+
+The content is the actual content of the element, such as text or images.
+The padding is the space between the content and the border.
+The border is a line that surrounds the padding and content.
+The margin is the space outside the border, between the border and other elements on the page.
+NOTE:MARGIN COLLAPSES BETWEEN TWO NEXT TO NEXT ELEMENTS SO THEY SHARE THE MARGIN, WHICHEVER MARGIN 
+WILL BE TH ELARGEST THEY WILL SHARE IT.. 
+When calculating the size and position of an element, the box model is used to determine the total width 
+and height of the element. By default, the size of an element is calculated based on its content, but you 
+can adjust the size of the element by adjusting the values of the padding, borders, and margins.
+
+You can control and modify the box model by using css properties like width, height, padding, border and margin. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .box-one {
+            /* set size of content with height and width */
+            /* by deafault height of element will be content height+ border + padding height=100+10[top padd]+10[bott]+20[border top]=20[border bott] */
+            height: 100px;
+            width: 100px;
+            background-color: palevioletred;
+            padding: 10px;
+            border: 20px solid lightblue;
+            margin: 60px;
+            /* if we want to minus border and padding from content height and width, use box-sizing */
+            /* box-sizing: border-box; */
+        }
+
+        .box-two {
+            background-color: purple;
+            height: 100px;
+            width: 100px;
+            background-color: palevioletred;
+            padding: 20px;
+            border: 20px solid lightblue;
+            margin: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-one">One</div>
+    <div class="box-two">Two</div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- DIFFERENCE PIXEL UNITS VS PERCENTAGE UNITS -->
+<!-- PIXEL UNIT(ABSOLUTE WIDTH) ALWAYS GOING TO BE SAME NO MATTER WHERE ITS DEFINED -->
+<!-- PERCENTAGE UNIT(RELATIVE WIDTH) IS GOING TO BE PERCENTAGE WIDTH BASED ON ITS PARENT SIZE -->
+
+<!-- VIEWPORT UNITS
+1. VIEW WIDTH(RELATIVE WIDTH) 
+1VW=1%[100VW] OF ENTIRE WINDOW SIZE
+2. VIEW HEIGHT(RELATIVE WIDTH)
+VW AND VH ARE BASED ON WINDOW SIZE NOT BASED ON PARENT SIZE LIKE PERCENTAGE UNITS, SO IF PARENT SIZE
+IS LESS IT WILL EXCEED IT SINCE IS DEPENDS ON WINDOW SIZE -->
+
+
+<!-- REM VS EM -->
+<!-- the rem unit means "The root element's font-size" (rem stands for "root em"). -->
+<!-- The em is simply the font size. In an element with a 2in font, 1em thus means 2in. -->
+
+<!-- REM ARE NOT RELATIVE TO HEIGHT AND WIDTH OF PARENT, INSTEAD OF THEY
+ARE RELATIVE TO FONT SIZE THAT WE HAVE DEFINED 
+1REM=16PX   1REM=100% OF ROOT FONT-SIZE-->
+<!-- EM RELATIVE TO PARENT FONTS-SIZE----- 1EM=100% OF PARENT FONT-SIZE[EX: 100% OF 30PX]-->
+
+<!-- PERCENTAGE FONT SAME AS EM
+FONT SIZE 200%= FONT SIZE 2EM -->
+
+
+<!-- RELATIVE UNIT : FR[FRACTIONAL UNIT]
+ONLY USED IN GRID AND FLEX BOX -->
+
+
+<head>
+    <style>
+        .fifty-percent {
+            width: 50%;
+            background-color: red;
+        }
+
+        .one-hundread-pixels {
+            width: 100px;
+            background-color: red;
+        }
+
+        .parent {
+            width: 135px;
+            border: 1px solid black;
+            font-size: 30px;
+        }
+
+        .fifty-vw {
+            width: 50vw;
+            background-color: red;
+        }
+
+        .twenty-five-vh {
+            height: 25vh;
+            background-color: red;
+        }
+
+        .one-rem {
+            font-size: 1rem;
+        }
+
+        .one-em {
+            font-size: 1em;
+        }
+
+        .two-rem {
+            font-size: 2rem;
+        }
+
+        .two-em {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box fifty-percent">50%</div>
+    <div class="box one-hundread-pixels">100px</div>
+    <hr>
+    <div class="parent">
+        <div class="box fifty-percent">50%</div>
+        <div class="box one-hundread-pixels">100px</div>
+    </div>
+    <hr>
+    <div class="box fifty-percent">50%</div>
+    <div class="box fifty-vw">50vw</div>
+    <div class="box twenty-five-vh">25vh</div>
+    <hr>
+    <div class="parent">
+        <div class="box fifty-percent">50%</div>
+        <div class="box fifty-vw">50vw</div>
+        <div class="box twenty-five-vh">25vh</div>
+    </div>
+    <hr>
+    <h1>REM AND EM</h1>
+    <!-- ONE LEVEL DEEP SAME FONT SIZE FOR ROOT THAT IS BODY WHICH IS ALSO A PARENT THEREFORE SAME BEHAVIOUR -->
+    <div class="one-rem">1rem</div>
+    <div class="one-em">1em</div>
+    <div class="two-rem">2rem</div>
+    <div class="two-em">2em</div>
+    <hr>
+    <div class="parent">
+        <div class="one-rem">1rem</div>
+        <div class="one-em">1em</div>
+        <div class="two-rem">2rem</div>
+        <div class="two-em">2em</div>
+        <!-- <div style="font-size: 60px;">2em</div> -->
+    </div>
+</body>
+
+</html>
